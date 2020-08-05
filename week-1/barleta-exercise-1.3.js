@@ -43,7 +43,7 @@ function CellPhone( manufacturer, model, color, price ) {
   }
 
   this.getDetails = function () {
-    return "\n"+ "Manufacturer: " + this.manufacturer + "\n" +
+    return "\n -- DISPLAYING CELL PHONE DETAILS -- \n"+ "Manufacturer: " + this.manufacturer + "\n" +
     "Model: " + this.getModel()
     + "\n" + "Color: " + this.color
     + "\n" + "Price: " + this.getPrice();
