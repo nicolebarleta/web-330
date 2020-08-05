@@ -27,4 +27,32 @@ console.log(header.display("Marie", "Barleta", "Exercise 1.3"));
 
 // start program
 
+function CellPhone( manufacturer, model, color, price ) {
+
+  this.manufacturer = manufacturer;
+  this.model = model;
+  this.color = color;
+  this.price = price;
+
+  this.getPrice = function(){
+    return this.price;
+  }
+
+  this.getModel = function(){
+    return this.model;
+  }
+
+  this.getDetails = function () {
+    return "\n"+ "Manufacturer: " + this.manufacturer + "\n" +
+    "Model: " + this.getModel()
+    + "\n" + "Color: " + this.color
+    + "\n" + "Price: " + this.getPrice();
+  };
+}
+
+var cellPhone = new CellPhone( "Apple", "iPhone 7", "Jet Black", "$770.99");
+
+
+console.log( cellPhone.getDetails() );
+
 // end program
