@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date:   5 Aug 2020
 ; Modified By: Marie Nicole Barleta
-; Description:
+; Description: Class Refresher
 ;===========================================
 */
 
