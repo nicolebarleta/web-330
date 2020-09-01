@@ -1,0 +1,59 @@
+<!---
+/*
+============================================
+; Title:  barleta-exercise-4.3.html
+; Author: Professor Krasso
+; Date:   31 Aug 2020
+; Modified By: Marie Nicole Barleta
+; Description: HTTP PUT and DELETE Operations
+;===========================================
+*/
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>barleta-exercise-4.3.html</title>
+
+    <!-- jQuery reference -->
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+      charset="UTF-8"
+    >
+  // import statement
+const header = require('../barleta-header.js');
+
+console.log(header.display("Marie", "Barleta", "Exercise 4.3"));
+
+
+  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h4>HTTP DELETE Request</h4>
+
+    <button id="delete1"> Delete Security User</button>
+    <script>
+      $(function() {
+
+          $('#delete1').click(function(){
+            $.ajax({
+              url: 'http://httpbin.org/delete',
+              dataType: 'json',
+              type: 'DELETE',
+              data: {username: 'admin', password: 'secret', email:'as@me.com' },
+              success: function(data, status){
+                console.log('Username: ' + data.form.username + '\nPassword: ' + data.form.password + '\nEmail:' + data.form.email + '\nStatus:' + status)
+              }
+            });
+          });
+
+      });
+    </script>
+  </body>
+</html>
