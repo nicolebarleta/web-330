@@ -1,0 +1,58 @@
+<!--
+
+/*
+============================================
+; Title:  discussion-week-7.html
+; Author: http://jsfiddle.net/rniemeyer/Rn9tg/
+; Date:   18 Sep 2020
+; Modified By: Marie Nicole Barleta
+; Description: Custom bindings
+;===========================================
+*/
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- JavaScript Libraries -->
+    <script
+      type="text/javascript"
+      src="knockout-3.5.1.js"></script>
+    <script src="../knockout-<version>.js"></script>
+  </head>
+  <body>
+
+<!-- Showing that we can both read and write the focus state -->
+<button data-bind="click: greet, jqButton">Click to greet</button>
+
+<script type="text/javascript">
+   ko.bindingHandlers.jqButton = {
+  init: function(element, valueAccessor) {
+    var options = valueAccessor() || {};
+    $(element).button(options);
+
+    //handle disposal (if KO removes by the template binding)
+    ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
+      $(element).button("destroy");
+    });
+  }
+};
+
+var viewModel = {
+  greet: function() {
+    alert("Hello");
+  }
+};
+
+ko.applyBindings(viewModel);
+</script>
+
+  </body>
+</html>
